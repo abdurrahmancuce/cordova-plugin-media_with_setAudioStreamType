@@ -177,13 +177,13 @@ public class AudioHandler extends CordovaPlugin {
 		else if (action.equals("mute_stream")) {
 			AudioManager audiMgr = (AudioManager) this.cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
             String muted = args.getString(2);
-			if(muted == "music"){
+			if(muted.equals("music")){
 				audiMgr.setStreamMute(AudioManager.STREAM_MUSIC, true);
-			}else if(muted == "system"){
+			}else if(muted.equals("system")){
 				audiMgr.setStreamMute(AudioManager.STREAM_SYSTEM, true);
-			}else if(muted == "alarm"){
+			}else if(muted.equals("alarm")){
 				audiMgr.setStreamMute(AudioManager.STREAM_ALARM, true);
-			}else if(muted == "ring"){
+			}else if(muted.equals("ring")){
 				audiMgr.setStreamMute(AudioManager.STREAM_RING, true);
 			}
            
@@ -192,13 +192,13 @@ public class AudioHandler extends CordovaPlugin {
 		else if (action.equals("unmute_stream")) {
 			AudioManager audiMgr = (AudioManager) this.cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
             String muted = args.getString(2);
-			if(muted == "music"){
+			if(muted.equals("music")){
 				audiMgr.setStreamMute(AudioManager.STREAM_MUSIC, false);
-			}else if(muted == "system"){
+			}else if(muted.equals("system")){
 				audiMgr.setStreamMute(AudioManager.STREAM_SYSTEM, false);
-			}else if(muted == "alarm"){
+			}else if(muted.equals("alarm")){
 				audiMgr.setStreamMute(AudioManager.STREAM_ALARM, false);
-			}else if(muted == "ring"){
+			}else if(muted.equals("ring")){
 				audiMgr.setStreamMute(AudioManager.STREAM_RING, false);
 			}
            
@@ -344,20 +344,20 @@ public class AudioHandler extends CordovaPlugin {
     }
     
     public void setAudioStreamType(String type){
-           if(type == "music"){
+           if(type.equals("music")){
                     this.streamType = AudioManager.STREAM_MUSIC;
-             }else if(type == "alarm"){
+             }else if(type.equals("alarm")){
                     this.streamType = AudioManager.STREAM_ALARM;
-             }else if(type == "dtmf"){
+             }else if(type.equals("dtmf")){
                     this.streamType = AudioManager.STREAM_DTMF;
-             }else if(type == "notification"){
+             }else if(type.equals("notification")){
                     this.streamType = AudioManager.STREAM_NOTIFICATION;
-             }else if(type == "ring"){
+             }else if(type.equals("ring")){
                     this.streamType = AudioManager.STREAM_RING;
-             }else if(type == "system"){
+             }else if(type.equals("system")){
                     this.streamType = AudioManager.STREAM_SYSTEM;
              }
-             else if(type == "voice_call"){
+             else if(type.equals("voice_call")){
                     this.streamType = AudioManager.STREAM_VOICE_CALL;
              }
     }
