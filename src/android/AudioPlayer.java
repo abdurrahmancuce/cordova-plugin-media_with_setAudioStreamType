@@ -547,9 +547,8 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
      * @throws IllegalArgumentException
      */
     private void loadAudioFile(String file) throws IllegalArgumentException, SecurityException, IllegalStateException, IOException {
-        
+        this.player.setAudioStreamType(this.getStreamType());
         if (this.isStreaming(file)) {
-            this.player.setAudioStreamType(this.getStreamType());
             //if it's a streaming file, play mode is implied
             this.setMode(MODE.PLAY);
             this.setState(STATE.MEDIA_STARTING);
